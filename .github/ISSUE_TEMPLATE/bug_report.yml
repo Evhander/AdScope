@@ -1,0 +1,68 @@
+name: Bug report
+description: Report a reproducible problem in AdScope
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping test AdScope. Please include enough device/audio-route detail to make the issue reproducible.
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      placeholder: e.g. Samsung Galaxy S24
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: e.g. Android 15
+    validations:
+      required: true
+  - type: input
+    id: spotify
+    attributes:
+      label: Spotify version
+      placeholder: e.g. 9.x.x
+  - type: dropdown
+    id: route
+    attributes:
+      label: Audio output
+      options:
+        - Phone speaker
+        - Wired headphones
+        - Bluetooth headphones
+        - Bluetooth car audio
+        - USB audio
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: AdScope mode
+      options:
+        - FULL MUTE (Ad volume = 0)
+        - Non-zero ad volume
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: AdScope diagnostics
+      description: Paste Copy diagnostics output here after removing anything you do not want to share.
+      render: text
